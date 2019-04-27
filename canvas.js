@@ -28,17 +28,39 @@ ctx.stroke();
 
 
 //Random sized circles in random locations
-for (let i = 0; i < 200; i++) {
-    let x = Math.random() * window.innerWidth;
-    let y = Math.random() * window.innerHeight;
-    let r = Math.random() * 100;
+// for (let i = 0; i < 200; i++) {
+//     let x = Math.random() * window.innerWidth;
+//     let y = Math.random() * window.innerHeight;
+//     let r = Math.random() * 100;
 
+//     ctx.beginPath();
+//     ctx.strokeStyle = '#7f2414';      
+//     ctx.arc(x, y, r, 0, Math.PI * 2, false);       //Creates a circle
+//     ctx.stroke();    
+// }
+
+let x = 200;
+let y = 200;
+let r = 50;
+
+function animate() {
+    requestAnimationFrame(animate);
+
+    // let x = Math.random() * window.innerWidth;
+    // let y = Math.random() * window.innerHeight;
+    // let r = Math.random() * 100;
+
+
+    ctx.clearRect(0, 0, innerWidth, innerHeight);
     ctx.beginPath();
     ctx.strokeStyle = '#7f2414';      
     ctx.arc(x, y, r, 0, Math.PI * 2, false);       //Creates a circle
-    ctx.stroke();    
+    ctx.stroke();
+    
+    x += 1;
+    y += 1;
 }
 
-
+animate();
 
 
